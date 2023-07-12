@@ -2,7 +2,7 @@ module.exports = ({ env }) => ({
   connection: {
     client: "postgres",
     connection: {
-      host: "@dpg-cin9evp5rnur6sd92s2g-a.frankfurt-postgres.render.com/store_zew5",
+      host: env("DATABASE_HOST"),
       port: env.int("DATABASE_PORT"),
       database: env("DATABASE_NAME"),
       user: env("DATABASE_USERNAME"),
@@ -10,4 +10,4 @@ module.exports = ({ env }) => ({
       ssl: env.bool("DATABASE_SSL", true),
     },
   },
-});
+})
